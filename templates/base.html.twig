@@ -21,9 +21,13 @@
     <body>
         <ul>
             <li><a href="{{ path("index") }}">Index</a></li>
-            <li><a href="{{ path("app_login") }}">Login</a></li>
-            <li><a href="{{ path("app_register") }}">Register</a></li>
-            <li><a href="{{ path("app_logout") }}">Logout</a></li>
+            {% if app.user %}
+                [{{ app.user.name }}, {{ app.user.country }}]
+                <li><a href="{{ path("app_logout") }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ path("app_login") }}">Login</a></li>
+                <li><a href="{{ path("app_register") }}">Register</a></li>
+            {% endif %}
         </ul>
         {% block body %}
         {% endblock %}

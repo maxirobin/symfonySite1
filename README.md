@@ -11,3 +11,8 @@ https://packagist.org/
 
 -- Créé premiere page / controller
 ./bin/console make:controller (name:DefaultController ; test:no)
+
+
+Mèttre a jour la BD : symfony console doctrine:schema:update --force
+Nouvelle Classe/Table : symfony console make:entity
+Ajouter un Controller : symfony console make:crud / Depuis une classe
