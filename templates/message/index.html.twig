@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>User</th>
+                <th>Categories</th>
                 <th>Body</th>
                 <th>Creation_date</th>
                 <th>actions</th>
@@ -18,6 +19,11 @@
         {% for message in messages %}
             <tr>
                 <td>{{ message.user.name }}</td>
+                <td>
+                    {% for category in message.categories %}
+                    [{{category}}]
+                    {% endfor %}
+                </td>
                 <td>{{ message.body }}</td>
                 <td>{{ message.creationDate ? message.creationDate|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
